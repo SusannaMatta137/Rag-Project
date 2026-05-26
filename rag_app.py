@@ -31,3 +31,23 @@ def health_check():
         "status": "ok",
         "message": "Server is running and Gemini API key is configured.",
     }
+    
+def test_gemini():
+    try:
+        # Create a Gemini model
+        model = genai.GenerativeModel("gemini-1.5-flash")
+
+        # Hardcoded prompt
+        prompt = "Explain what a large language model is in one paragraph."
+
+        # Call Gemini
+        response = model.generate_content(prompt)
+
+        # Extract text
+        output_text = response.text
+
+        # Return JSON
+        return {"response": output_text}
+
+    except Exception as e:
+        raise RuntimeError(f"Gemini test failed: {str(e)}")

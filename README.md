@@ -31,3 +31,19 @@ app = FastAPI() creates the web server.
 
 Health Endpoint: 
 The /health endpoint returns a JSON message confirming the server is running and the API key loaded successfully.
+
+Week 4 — Backend Setup Summary
+What I Set Up This Week
+- Created project files (rag_app.py, .env, requirements.txt, .gitignore)
+- Installed FastAPI, Uvicorn, python-dotenv, and Google Gemini libraries
+- Created and activated a virtual environment
+- Added my Gemini API key to .env
+- Ran the FastAPI server successfully
+
+Purpose of rag_app.py
+- Loads environment variables using load_dotenv()
+- Reads the GEMINI_API_KEY from .env
+- Validates that the API key exists
+- Configures the Gemini client (no calls yet)
+- Creates a FastAPI app
+- Provides a /health endpoint to confirm the server is running
